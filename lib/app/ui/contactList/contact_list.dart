@@ -38,7 +38,7 @@ class ContactList extends StatelessWidget {
         builder: (_) {
           List<ContactModel> contactList = _contactListStore.contactList.data;
 
-          if (contactList != null) {
+          if (contactList == null) {
             return Container();
           }
 
