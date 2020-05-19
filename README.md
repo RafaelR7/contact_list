@@ -1,5 +1,10 @@
 # contact_list
 
-A CRUD using Firestore and Mobx
+A contact list CRUD using Firestore and Mobx
 
-<img src="![Screenshot_1589929293](https://user-images.githubusercontent.com/20539985/82387137-9a770d80-9a0c-11ea-8843-3bb9b92a9142.png)" width="100"/>
+<div>
+  <img src="https://user-images.githubusercontent.com/20539985/82387933-ae237380-9a0e-11ea-9820-a3cb4575852f.png" width="250"/>
+  <img src="https://user-images.githubusercontent.com/20539985/82387939-af54a080-9a0e-11ea-9969-32e40e482739.png" width="250"/>
+  <img src="https://user-images.githubusercontent.com/20539985/82387943-b085cd80-9a0e-11ea-8e7c-0f2fde15cbaa.png" width="250"/>
+</div>
+
