@@ -1,3 +1,4 @@
+import 'package:contact_list/app/i18n/i18n.dart';
 import 'package:contact_list/app/models/contact_model.dart';
 import 'package:contact_list/app/stores/contact_list_store.dart';
 import 'package:contact_list/app/ui/contactList/contact_details.dart';
@@ -15,7 +16,7 @@ class ContactList extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Lista de Contatos"),
+        title: Text("${I18n.of(context).contactList}"),
         actions: <Widget>[
           IconButton(
             icon: const Icon(

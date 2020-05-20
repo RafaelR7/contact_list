@@ -1,3 +1,4 @@
+import 'package:contact_list/app/i18n/i18n.dart';
 import 'package:contact_list/app/models/contact_model.dart';
 import 'package:contact_list/app/stores/contact_list_store.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +36,9 @@ class _ContactFormState extends State<ContactForm> {
     bool isEdit = widget.contact != null ? true : false;
     return Scaffold(
       appBar: AppBar(
-        title: Text(isEdit ? 'Editar Contato' : 'Novo Contato'),
+        title: Text(isEdit
+            ? '${I18n.of(context).editContact}'
+            : '${I18n.of(context).newContact}'),
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -47,13 +50,13 @@ class _ContactFormState extends State<ContactForm> {
                 TextFormField(
                   validator: (value) {
                     if (value.isEmpty) {
-                      return 'Informe o Nome';
+                      return '${I18n.of(context).enterTheName}';
                     }
                     return null;
                   },
                   controller: _nameController,
                   decoration: InputDecoration(
-                    labelText: 'Nome',
+                    labelText: '${I18n.of(context).name}',
                   ),
                 ),
                 Padding(
@@ -65,13 +68,13 @@ class _ContactFormState extends State<ContactForm> {
                     ],
                     validator: (value) {
                       if (value.isEmpty) {
-                        return 'Informe o Telefone';
+                        return '${I18n.of(context).enterThePhone}';
                       }
                       return null;
                     },
                     controller: _phoneController,
                     decoration: InputDecoration(
-                      labelText: 'Telefone',
+                      labelText: '${I18n.of(context).phone}',
                     ),
                   ),
                 ),
@@ -80,13 +83,13 @@ class _ContactFormState extends State<ContactForm> {
                   child: TextFormField(
                     validator: (value) {
                       if (value.isEmpty) {
-                        return 'Informe o Endereço';
+                        return '${I18n.of(context).enterTheAddress}';
                       }
                       return null;
                     },
                     controller: _addressController,
                     decoration: InputDecoration(
-                      labelText: 'Endereço',
+                      labelText: '${I18n.of(context).address}',
                     ),
                   ),
                 ),
@@ -97,7 +100,9 @@ class _ContactFormState extends State<ContactForm> {
                     height: 40,
                     child: RaisedButton(
                       child: Text(
-                        isEdit ? 'Editar' : 'Adicionar',
+                        isEdit
+                            ? '${I18n.of(context).edit}'
+                            : '${I18n.of(context).add}',
                       ),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0)),
@@ -136,8 +141,9 @@ class _ContactFormState extends State<ContactForm> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title:
-                isEdit ? Text('Contado Editado') : Text('Contato Adicionado'),
+            title: isEdit
+                ? Text('${I18n.of(context).contactEdited}')
+                : Text('${I18n.of(context).contactAdded}'),
             actions: <Widget>[
               FlatButton(
                 child: Text('OK'),

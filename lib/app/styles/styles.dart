@@ -6,7 +6,7 @@ class Styles {
     brightness: Brightness.light,
     primaryColor: Colors.blue,
     backgroundColor: Colors.white,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: Colors.grey[200],
     iconTheme: IconThemeData(color: Colors.blue),
     textTheme: TextTheme(
       headline1: TextStyle(color: Colors.black87, fontSize: 96),

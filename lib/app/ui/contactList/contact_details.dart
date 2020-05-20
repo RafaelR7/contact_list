@@ -1,3 +1,4 @@
+import 'package:contact_list/app/i18n/i18n.dart';
 import 'package:contact_list/app/models/contact_model.dart';
 import 'package:contact_list/app/stores/contact_list_store.dart';
 import 'package:contact_list/app/ui/contactList/contact_form.dart';
@@ -79,17 +80,17 @@ class _ContactDetailsState extends State<ContactDetails> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Excluir Contato?'),
+          title: Text('${I18n.of(context).deleteContact}'),
           actions: <Widget>[
             FlatButton(
-              child: Text('Sim'),
+              child: Text('${I18n.of(context).yes}'),
               onPressed: () {
                 _contactListStore.deleteContact(contact);
                 Navigator.pushNamed(context, '/contactList');
               },
             ),
             FlatButton(
-              child: Text('Não'),
+              child: Text('${I18n.of(context).no}'),
               onPressed: () => Navigator.of(context).pop(),
             )
           ],
