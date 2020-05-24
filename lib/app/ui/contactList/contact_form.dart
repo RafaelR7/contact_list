@@ -159,7 +159,8 @@ class _ContactFormState extends State<ContactForm> {
               FlatButton(
                 child: Text('OK'),
                 onPressed: () {
-                  Navigator.pushNamed(context, '/contactList');
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                      '/contactList', (Route<dynamic> route) => false);
                 },
               )
             ],

@@ -104,7 +104,8 @@ class _ContactDetailsState extends State<ContactDetails> {
               child: Text('${I18n.of(context).yes}'),
               onPressed: () {
                 _contactListStore.deleteContact(contact);
-                Navigator.pushNamed(context, '/contactList');
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                    '/contactList', (Route<dynamic> route) => false);
               },
             ),
             FlatButton(
