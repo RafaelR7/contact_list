@@ -1,5 +1,6 @@
 import 'package:contact_list/app/i18n/i18n_delegate.dart';
 import 'package:contact_list/app/styles/styles.dart';
+import 'package:contact_list/app/ui/contactList/contac_list_splash.dart';
 import 'package:contact_list/app/ui/contactList/contact_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: Styles.lightThemeData,
-      home: ContactList(),
+      home: ContactListSplash(),
       routes: <String, WidgetBuilder>{
         '/contactList': (BuildContext context) => ContactList(),
       },

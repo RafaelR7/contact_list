@@ -2,6 +2,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class Styles {
+  static const String defaultFontRegular = 'DancingScript';
+
   static ThemeData lightThemeData = ThemeData.light().copyWith(
     brightness: Brightness.light,
     primaryColor: Colors.blue,
@@ -15,7 +17,8 @@ class Styles {
       headline4: TextStyle(color: Colors.black87, fontSize: 34),
       headline5: TextStyle(color: Colors.black87, fontSize: 24),
       headline6: TextStyle(color: Colors.black87, fontSize: 20),
-      subtitle1: TextStyle(color: Colors.black87, fontSize: 20), //default Text
+      subtitle1: TextStyle(
+          color: Colors.black87, fontSize: 20, fontFamily: 'R'), //default Text
       subtitle2: TextStyle(color: Colors.black87, fontSize: 14),
       bodyText1: TextStyle(color: Colors.black87, fontSize: 16),
       bodyText2: TextStyle(color: Colors.black87, fontSize: 14),
@@ -27,4 +30,7 @@ class Styles {
       textTheme: ButtonTextTheme.primary,
     ),
   );
+
+  static TextStyle splashScreenText =
+      TextStyle(color: Colors.white, fontSize: 34, fontFamily: 'Dancing');
 }

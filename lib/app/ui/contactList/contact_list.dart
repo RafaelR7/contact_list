@@ -16,7 +16,10 @@ class ContactList extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("${I18n.of(context).contactList}"),
+        title: Text(
+          "${I18n.of(context).contactList}",
+          style: TextStyle(fontFamily: 'Montserrat'),
+        ),
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
