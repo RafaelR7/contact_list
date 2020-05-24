@@ -62,35 +62,27 @@ class ContactList extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return Container(
                 height: 80,
-                child: Card(
-                  color: Colors.white,
-                  elevation: 4,
-                  child: Slidable(
-                    actionPane: SlidableDrawerActionPane(),
-                    actionExtentRatio: 0.25,
-                    secondaryActions: <Widget>[
-                      IconSlideAction(
-                        color: Colors.blue,
-                        icon: Icons.edit,
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                ContactForm(contact: contactList[index]),
-                          ),
-                        ),
-                      ),
-                      IconSlideAction(
+                child: Slidable(
+                  actionPane: SlidableDrawerActionPane(),
+                  actionExtentRatio: 0.30,
+                  secondaryActions: <Widget>[
+                    Container(
+                      height: 72,
+                      child: IconSlideAction(
                         color: Colors.red,
                         icon: Icons.delete,
                         onTap: () => {
                           deleteDialog(
                               context: context,
-                              store: _contactListStore,
+                              contactListStore: _contactListStore,
                               contact: contactList[index]),
                         },
                       ),
-                    ],
+                    ),
+                  ],
+                  child: Card(
+                    color: Colors.white,
+                    elevation: 2,
                     child: Center(
                       child: ListTile(
                         leading: CircleAvatar(
@@ -124,7 +116,7 @@ class ContactList extends StatelessWidget {
 
   Future<bool> deleteDialog({
     BuildContext context,
-    ContactListStore store,
+    ContactListStore contactListStore,
     ContactModel contact,
   }) {
     return showDialog(
@@ -136,7 +128,7 @@ class ContactList extends StatelessWidget {
             FlatButton(
               child: Text('${I18n.of(context).yes}'),
               onPressed: () {
-                store.deleteContact(contact);
+                contactListStore.deleteContact(contact);
                 Navigator.of(context).pop();
               },
             ),
