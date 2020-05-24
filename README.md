@@ -1,10 +1,17 @@
 # contact_list
 
-A contact list CRUD using Firestore and Mobx
+A contact list CRUD
+
+#### Features:
+- Mobx
+- Firestore
+- I18n en, pt
+- Splash screen
 
 <div>
-  <img src="https://user-images.githubusercontent.com/20539985/82387933-ae237380-9a0e-11ea-9820-a3cb4575852f.png" width="250"/>
-  <img src="https://user-images.githubusercontent.com/20539985/82387939-af54a080-9a0e-11ea-9969-32e40e482739.png" width="250"/>
-  <img src="https://user-images.githubusercontent.com/20539985/82387943-b085cd80-9a0e-11ea-8e7c-0f2fde15cbaa.png" width="250"/>
+  <img src="https://user-images.githubusercontent.com/20539985/82758272-e5ea3c80-9dbb-11ea-9614-0e0d10414615.png" width="250"/>
+  <img src="https://user-images.githubusercontent.com/20539985/82758276-e97dc380-9dbb-11ea-9da6-77de59e81892.png" width="250"/>
+  <img src="https://user-images.githubusercontent.com/20539985/82758278-eaaef080-9dbb-11ea-86a0-01fa70d110fc.png" width="250"/>
+  <img src="https://user-images.githubusercontent.com/20539985/82758280-ed114a80-9dbb-11ea-99ca-ac5f81228bb5.png" width="250"/>
+  <img src="https://user-images.githubusercontent.com/20539985/82758283-ee427780-9dbb-11ea-8375-9bc8fffc7ddc.png" width="250"/>
 </div>
-
