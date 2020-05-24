@@ -20,6 +20,15 @@ class _ContactDetailsState extends State<ContactDetails> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.contact.name),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: <Color>[Colors.purple, Colors.blue],
+            ),
+          ),
+        ),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.edit),
@@ -45,8 +54,17 @@ class _ContactDetailsState extends State<ContactDetails> {
                 height: MediaQuery.of(context).size.height * 0.2,
                 padding: EdgeInsets.all(40.0),
                 width: MediaQuery.of(context).size.width,
-                decoration:
-                    BoxDecoration(color: Color.fromRGBO(58, 66, 86, .9)),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: <Color>[
+                      Colors.grey[600],
+                      Colors.grey[700],
+                      Colors.grey[800],
+                    ],
+                  ),
+                ),
                 child: Center(
                   child: CircleAvatar(
                     radius: 40.0,

@@ -17,8 +17,18 @@ class ContactList extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("${I18n.of(context).contactList}"),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: <Color>[Colors.purple, Colors.blue],
+            ),
+          ),
+        ),
         actions: <Widget>[
           IconButton(
+            key: Key('add_contact_button'),
             icon: const Icon(
               Icons.group_add,
             ),

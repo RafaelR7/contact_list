@@ -10,7 +10,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Lista de Contatos',
       theme: Styles.lightThemeData,
       home: ContactList(),
       routes: <String, WidgetBuilder>{

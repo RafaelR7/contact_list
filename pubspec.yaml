@@ -21,6 +21,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_driver:
+    sdk: flutter
+  test: any
   build_runner: ^1.9.0
   mobx_codegen: ^1.0.3
 

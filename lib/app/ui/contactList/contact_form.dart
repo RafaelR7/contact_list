@@ -36,9 +36,20 @@ class _ContactFormState extends State<ContactForm> {
     bool isEdit = widget.contact != null ? true : false;
     return Scaffold(
       appBar: AppBar(
-        title: Text(isEdit
-            ? '${I18n.of(context).editContact}'
-            : '${I18n.of(context).newContact}'),
+        title: Text(
+          isEdit
+              ? '${I18n.of(context).editContact}'
+              : '${I18n.of(context).newContact}',
+        ),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: <Color>[Colors.purple, Colors.blue],
+            ),
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Form(
