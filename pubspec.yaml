@@ -32,3 +32,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/contact.png
+  fonts:
+    - family: Satisfy
+      fonts:
+        - asset: assets/fonts/Satisfy-Regular.ttf

@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: Styles.lightThemeData,
+      theme: Styles.customTheme,
       home: ContactListSplash(),
       routes: <String, WidgetBuilder>{
         '/contactList': (BuildContext context) => ContactList(),
