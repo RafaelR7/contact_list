@@ -1,7 +1,6 @@
 import 'package:contact_list/app/i18n/i18n.dart';
 import 'package:contact_list/app/models/contact_model.dart';
 import 'package:contact_list/app/stores/contact_list_store.dart';
-import 'package:contact_list/app/ui/contactList/contact_form.dart';
 import 'package:flutter/material.dart';
 
 class ContactDetails extends StatefulWidget {
@@ -29,22 +28,6 @@ class _ContactDetailsState extends State<ContactDetails> {
             ),
           ),
         ),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.edit),
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ContactForm(contact: widget.contact),
-              ),
-            ),
-          ),
-          IconButton(
-            icon: const Icon(Icons.delete),
-            onPressed: () =>
-                deleteDialog(context: context, contact: widget.contact),
-          ),
-        ],
       ),
       body: Column(
         children: <Widget>[

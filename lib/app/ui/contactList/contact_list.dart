@@ -5,6 +5,7 @@ import 'package:contact_list/app/ui/contactList/contact_details.dart';
 import 'package:contact_list/app/ui/contactList/contact_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class ContactList extends StatelessWidget {
   const ContactList({Key key}) : super(key: key);
@@ -51,7 +52,6 @@ class ContactList extends StatelessWidget {
       body: Observer(
         builder: (_) {
           List<ContactModel> contactList = _contactListStore.contactList.data;
-
           if (contactList == null) {
             return Container();
           }
@@ -65,27 +65,52 @@ class ContactList extends StatelessWidget {
                 child: Card(
                   color: Colors.white,
                   elevation: 4,
-                  child: Center(
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        child: Text(
-                          _contactListStore.contactList.data[index].name[0]
-                              .toUpperCase(),
-                        ),
-                      ),
-                      title: Text(
-                        _contactListStore.contactList.data[index].name,
-                      ),
-                      onTap: () => {
-                        Navigator.push(
+                  child: Slidable(
+                    actionPane: SlidableDrawerActionPane(),
+                    actionExtentRatio: 0.25,
+                    secondaryActions: <Widget>[
+                      IconSlideAction(
+                        color: Colors.blue,
+                        icon: Icons.edit,
+                        onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ContactDetails(
-                                contact:
-                                    _contactListStore.contactList.data[index]),
+                            builder: (context) =>
+                                ContactForm(contact: contactList[index]),
                           ),
-                        )
-                      },
+                        ),
+                      ),
+                      IconSlideAction(
+                        color: Colors.red,
+                        icon: Icons.delete,
+                        onTap: () => {
+                          deleteDialog(
+                              context: context,
+                              store: _contactListStore,
+                              contact: contactList[index]),
+                        },
+                      ),
+                    ],
+                    child: Center(
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          child: Text(
+                            contactList[index].name[0].toUpperCase(),
+                          ),
+                        ),
+                        title: Text(
+                          contactList[index].name,
+                        ),
+                        onTap: () => {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  ContactDetails(contact: contactList[index]),
+                            ),
+                          )
+                        },
+                      ),
                     ),
                   ),
                 ),
@@ -94,6 +119,34 @@ class ContactList extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+
+  Future<bool> deleteDialog({
+    BuildContext context,
+    ContactListStore store,
+    ContactModel contact,
+  }) {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('${I18n.of(context).deleteContact}'),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('${I18n.of(context).yes}'),
+              onPressed: () {
+                store.deleteContact(contact);
+                Navigator.of(context).pop();
+              },
+            ),
+            FlatButton(
+              child: Text('${I18n.of(context).no}'),
+              onPressed: () => Navigator.of(context).pop(),
+            )
+          ],
+        );
+      },
     );
   }
 }
