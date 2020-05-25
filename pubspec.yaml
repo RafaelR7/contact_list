@@ -25,6 +25,7 @@ dev_dependencies:
     sdk: flutter
   flutter_driver:
     sdk: flutter
+  flutter_launcher_icons: ^0.7.5
   test: any
   build_runner: ^1.9.0
   mobx_codegen: ^1.0.3
@@ -37,3 +38,8 @@ flutter:
     - family: Satisfy
       fonts:
         - asset: assets/fonts/Satisfy-Regular.ttf
+
+flutter_icons:
+  ios: true
+  android: true
+  image_path: "assets/images/contact.png"
