@@ -1,6 +1,8 @@
 # contact_list
 
 A contact list CRUD
+Manages a contact list. Display, add, edit and delete contacts.
+
 
 #### Features:
 - Mobx
